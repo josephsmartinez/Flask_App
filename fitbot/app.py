@@ -2,11 +2,13 @@ from flask import Flask, render_template, flash, redirect, url_for, session, log
 from flask_login import login_required
 # from data import Articles
 from flask_mysqldb import MySQL
-#WTForms Documentation https://wtforms.readthedocs.io/en/latest/
+# WTForms Documentation https://wtforms.readthedocs.io/en/latest/
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
 from twilio.twiml.messaging_response import MessagingResponse
+# Importing file from anoter module.
+# import testFunction1, testFunction2
 
 app = Flask(__name__)
 
@@ -291,6 +293,18 @@ def delete_article(id):
 @is_logged_in
 def hidden():
     return render_template('hidden.html')
+
+# This is the educational HTML, CSS page.
+@app.route('/htmlCheatSheet')
+@is_logged_in
+def htmlCheatSheet():
+    return render_template('htmlCheatSheet.html')
+
+# This is the educational Python page.
+@app.route('/pythonApp')
+@is_logged_in
+def pythonApp():
+    return render_template('pythonApp.html')
 
 # Text messaging system for responding.
 @app.route("/sms", methods=['GET', 'POST'])

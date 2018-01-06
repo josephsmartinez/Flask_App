@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-
+<!-- This is the general layout styles that will be redered -->
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Flask App</title>
+    <!-- Tab title -->
+    <title>My Flask Application</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
   </head>
   <body>
     {% include 'includes/_navbar.html' %}
     <div class="container">
     {% include 'includes/_messages.html' %}
+    <!-- Bock Body Layout -->
     {% block body %}{% endblock %}
-    <div>
+    </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
         <script>
